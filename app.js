@@ -13,7 +13,7 @@ function sum(a, b) {
   let sum = a + b;
   // The sum of 4 and 7 is 11.
   let string = "The sum of " + a + " and " + b + " is " + sum + ".";
-  console.log(string);
+  // console.log(string);
   return [sum, string];
 }
 
@@ -35,7 +35,7 @@ function multiply(a, b) {
   //eslint-disable-line
   let product = a * b;
   let string = "The product of " + a + " and " + b + " is " + product + ".";
-  console.log(string);
+  // console.log(string);
   return [product, string];
 }
 
@@ -59,10 +59,32 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
   // your previous function sum returns an array. let answer = sum(10, 5)[0];
+  let sumAandB = sum(a, b);
+  // console.log("Spenser sample " + sumAandB + " hi hi hi.");
+  let sumABC = sum(sumAandB[0], c);
+  // console.log(sumABC);
+  let productAandB = multiply(a, b);
+  // console.log(productAandB);
+  let productABC = multiply(productAandB[0], c);
+  let stringSum = a + " and " + b + " and " + c + " sum to " + sumABC[0] + ".";
+  // console.log(stringSum);
+  let stringProduct =
+    "The product of " +
+    a +
+    " and " +
+    b +
+    " and " +
+    c +
+    " is " +
+    productABC[0] +
+    ".";
+  let answersArray = [sumABC[0], productABC[0], stringSum, stringProduct];
+  console.log(answersArray);
+  return answersArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
